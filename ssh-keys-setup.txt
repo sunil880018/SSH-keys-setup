@@ -1,0 +1,48 @@
+ ------------------------ What is SSH? ------------------------------
+SSH is a way to authenticate without exposing your username and password of GitLab.
+SSH stands for Secure Shell and is a cryptographic protocol based on the concept of public-private keys.
+We are using SSH with Git because it is much easier than typing your username and password all the time, 
+and it is also more secure.You have probably noticed that GitLab is complaining that you don’t have an SSH key.
+
+
+----------------------- Steps to Setup SSH key in window 10 ------------------------------------
+Type the Commands
+
+1. ssh-keygen // First, you will be asked about the location where the keys should be stored. 
+                By default, your user folder will contain a folder called .ssh. Leave it as it 
+                and hit the Enter key.
+
+
+id_rsa ===> this is your PRIVATE key. DO NOT SHARE this with anyone else. This is your secret.
+id_rsa.pub ===> this is your PUBLIC key. This contains no secrets. You can share it with others.
+
+
+2. Adding your SSH key to GitLab
+   i) cat /c/user/.ssh/ // open the .pub file and copy all the text
+      or
+      If you are not using Git bash, you may want to use type and pipe it to clip, like:
+   i)   type id_rsa.pub | clip
+
+3. Open GitLab Go to-->Setting-->Profile-->SSH keys
+   and paste your public key
+
+
+
+----------------------- Steps to Setup SSH key in Linux ------------------------------------
+
+Same as Window 10 Commands
+
+
+----------------------- Steps to Setup SSH key in MacOS ------------------------------------
+
+
+First You need to install homebrew
+-->Just go bres.sh and copy the command and paste in mac terminal
+
+1. brew install git // installing git
+
+2. ssh-keygen -t rsa -b 4096
+   // -t to specify the RSA encryption algorithm
+   // -b to specify the key size in bits.
+
+3. Follow same as window 10 instructions
